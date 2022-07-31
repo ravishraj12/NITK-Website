@@ -1,4 +1,4 @@
-NITK Website
+					NITK Website
 
 Project Structure:
 
