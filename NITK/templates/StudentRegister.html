@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% block title %}Student Registration{% endblock %}
+{% block content %}
+<style>
+    *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+.main_div{
+  align:center;
+  width: 365px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+.main_div .title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #1B374C;
+}
+
+form {
+  margin-top: 25px;
+}
+form .input_box{
+  height: 50px;
+  width: 30%;
+  position: relative;
+  margin-top: 15px;
+  margin-left: 25%;
+  margin-bottom: 3%;
+}
+.input_box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 45px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.input_box input:focus{
+  border-color: #be2edd;
+}
+.input_box .icon{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: grey;
+}
+form .option_div{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.option_div .check_box{
+  display: flex;
+  align-items: center;
+}
+.option_div span{
+  margin-left: 5px;
+  font-size: 16px;
+  color: #333;
+}
+.option_div .forget_div a{
+  font-size: 16px;
+  color: #be2edd;
+}
+.button input{
+  padding-left: 0;
+  background: #1B374C;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.button input:hover{
+  background: #a720c5;
+}
+form .sign_up{
+  text-align: center;
+  margin-top: 25px;
+}
+.sign_up a{
+  color: #be2edd;
+}
+form a{
+  text-decoration: none;
+}
+form a:hover{
+  text-decoration: underline;
+}
+</style>
+ <div class="bd-example" style="padding-left: 15%;">
+        <form class="needs-validation was-validated" novalidate="" method="POST">
+            {% csrf_token %}
+            <div class="col">
+                <h4 style="padding-left: 33%;color: darkslateblue;">Student Registration</h4>
+                <label for="Position1">Enter Your Roll No.</label>
+                <div class="col-sm-10">
+                    <input name="rollNo" type="text" class="form-control" id="Position1" placeholder="Enter Your Roll No." required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter Roll No
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- <h4 style="text-align: center;">Student Registration</h4> -->
+                <label for="Position1">Enter Your Name</label>
+                <div class="col-sm-10">
+                    <input name="Name" type="text" class="form-control" id="Position1" placeholder="Enter Your Name" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter Name
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- <h4 style="text-align: center;">Student Registration</h4> -->
+                <label for="Position1">Enter Your Course</label>
+                <div class="col-sm-10">
+                    <input name="course" type="text" class="form-control" id="Position1" placeholder="Enter Your Course" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter Course
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- <h4 style="text-align: center;">Student Registration</h4> -->
+                <label for="Position1">Enter Your Branch</label>
+                <div class="col-sm-10">
+                    <input name="branch" type="text" class="form-control" id="Position1" placeholder="Enter Your Branch" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter Branch
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- <h4 style="text-align: center;">Student Registration</h4> -->
+                <label for="Position1">Enter Your Sememster</label>
+                <div class="col-sm-10">
+                    <input name="semester" type="text" class="form-control" id="Position1" placeholder="Enter Your Sememster" required="" value="1">
+                    <div class="invalid-feedback">
+                        Please Enter Semester
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- <h4 style="text-align: center;">Student Registration</h4> -->
+                <label for="Position1">Enter Your CGPA</label>
+                <div class="col-sm-10">
+                    <input name="cgpa" type="text" class="form-control" id="Position1" placeholder="Enter Your CGPA" required="" value="0.0">
+                    <div class="invalid-feedback">
+                        Please Enter CGPA
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- <h4 style="text-align: center;">Student Registration</h4> -->
+                <label for="Position1">Enter Your Credits</label>
+                <div class="col-sm-10">
+                    <input name="credits" type="text" class="form-control" id="Position1" placeholder="Enter Your Credits" required="" value="0">
+                    <div class="invalid-feedback">
+                        Please Enter Credits
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- <h4 style="text-align: center;">Student Registration</h4> -->
+                <label for="Position1">Enter Your Password</label>
+                <div class="col-sm-10">
+                    <input name="Password" type="password" class="form-control" id="Pass1" placeholder="Enter Your Password" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter password
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- <h4 style="text-align: center;">Student Registration</h4> -->
+                <label for="Position1">Re-type Your Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="Pass2" placeholder="Enter Your Password Again" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter password
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="input_box button">
+        <input  type="submit" value="Register">
+          {% for msg in messages %}
+            <p id="messages" style="color:red"> {{msg}}</p>
+        {% endfor %}
+      </div>
+        </form>
+    </div>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        function IsValidEmail(email) {
+            var expr = /[A-Za-z][A-Za-z._0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+            return expr.test(email);
+        };
+
+        function ValidateEmails() {
+            var message = ""
+            var inputs = document.getElementsById("inputEmail1");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "text" && inputs[i].className.indexOf("email") != -1) {
+                    var email = inputs[i].value;
+                    if (IsValidEmail(email)) {
+                        message += email + " - Valid Email.\n"
+                    } else {
+                        message += email + " - Invalid Email.\n"
+                    }
+                }
+            }
+            alert(message);
+        }
+
+        function myfun() {
+            var a = document.getElementById("Pass1").value;
+            var b = document.getElementById("Pass2").value;
+            if (a != b) {
+                document.getElementById("messages").innerHTML = "Password Not Match"
+                document.getElementById("Pass1").value = '';
+                document.getElementById("Pass2").value = '';
+                return false;
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+{% endblock %}

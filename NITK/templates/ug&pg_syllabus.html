@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Syallabus{% endblock %}
+{% block content %}
+<style>
+    .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+</style>
+    <div style="display: inline-block; width: 100%; padding-left: 5%;padding-right: 5%; text-align: center;">
+        <h2>UG & PG Syllabus</h2><br><br>
+        <h5> UG Syllabus</h5>
+        <a href="#">Ug Syllabus</a><br>
+        <a href="/static/img/ug_syallabus.pdf"><button class="btn btn-primary pos" style="background: dodgerblue;">Download</button></a>
+        
+        <h5><br> PG Syllabus</h5>
+        <a href="#">Pg Syllabus</a><br>
+        <a href="/static/img/pg_syallabus.pdf"><button class="btn btn-primary pos" style="background: dodgerblue;">Download</button></a>
+    </div>
+
+        <!-- Add your bootstrap class here or any other required script like jquery, javascript, ajax etc if needed -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+{% endblock %}

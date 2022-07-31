@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Academic Office{% endblock %}
+{% block content %}
+    <style>
+        /* If your content is less and footer is not at the bottom of the page uncomment below css class .footer */
+        /*.footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }*/
+        /* Add your Inline CSS class here */
+        /*.gdlr-core-page-builder-body [data-skin="Personnel"] a, .gdlr-core-page-builder-body [data-skin="Personnel"] .gdlr-core-skin-link*/
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+
+
+
+        #innerfooter {
+            width: 100%;
+            background: #1B374C;
+            border-top: 5px solid #EE5030;
+            padding: 10px 0;
+        }
+
+        #footer {
+            width: 100%;
+            font-size: 13px;
+            color: #ddd;
+            text-align: left;
+            padding: 10px 0;
+            /* border-top: 5px solid #108896; */
+        }
+
+        a.darklinks {
+            color: #FFF;
+            font-size: 13px;
+            cursor: pointer;
+            margin: 0;
+            text-decoration: none;
+            -moz-transition: all .2s;
+            -o-transition: all .2s;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+        }
+    </style>
+
+<div id="updates" style="width: 100% display: inline-block;padding-top:2%; position:static;">
+
+                <div class="row">
+                <div class="col-sm-4">
+                    <div class="card text-center" >
+                    <div Style="align=center;"><img class="card-img-top " src="/static/img/v_shetty.jpg" alt="Card image cap" style="width:58%; align=center;"></div>
+                    <h3>Dean</h3>
+                    <h4>Email : deanacademic@nitk.edu.in</h4>
+                    <h4>Phone : +91-824-2474040</h4>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card text-center" >
+
+                    <div style="align-center";>    <img class="card-img-top" src="/static/img/m_sharma.jpeg" alt="Card image cap" style="width:51.5%" > </div>
+                    <h3>Associate Dean(UG)</h3>
+                    <h4>Email : associatedean_ug@nitk.edu.in</h4>
+                    <h4>Phone : +91-0824-2473003</h4>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card text-center" >
+                    <div style="align-center"><img class="card-img-top" src="/static/img/r_kini.jpeg" alt="Card image cap" style="width:54%"> </div>
+                    <h3>Associate Dean (PG & R)</h3>
+                    <h4>Email : associatedean_pgrch@nitk.edu.in</h4>
+                    <h4>Phone : +91-824-2474000</h4>
+                    </div>
+                </div>
+
+        </div>
+</div>
+{% endblock %}

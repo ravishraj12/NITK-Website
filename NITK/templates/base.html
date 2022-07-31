@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon_io/favicon-16x16.png">
+    <link rel="stylesheet" href="../static/css/styleStudent.css">
+    <!--  Bootstrap CSS -->
+       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+<style>
+    h1{
+        font-style:normal;
+        text-align: center;
+    }
+    .menuparent.sub-menu.li{
+    z-index:0;
+    }
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        /* If your content is less and footer is not at the bottom of the page uncomment below css class .footer */
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+        /* Add your Inline CSS class here */
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #bab4b4;
+            background-clip: border-box;
+            border: 1px solid rgb(0 0 0 / 13%);
+            border-radius: 0.25rem;
+        }
+
+        #innerfooter {
+            width: 100%;
+            background: #1B374C;
+            border-top: 5px solid #EE5030;
+            padding: 10px 0;
+        }
+        #hd {
+            width: 100%;
+             position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 0;
+
+        }
+        #footer {
+            width: 100%;
+            font-size: 13px;
+            color: #ddd;
+            text-align: left;
+            padding: 10px 0;
+            /* border-top: 5px solid #108896; */
+        }
+
+        a.darklinks {
+            color: #FFF;
+            font-size: 13px;
+            cursor: pointer;
+            margin: 0;
+            text-decoration: none;
+            -moz-transition: all .2s;
+            -o-transition: all .2s;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+        }
+
+                /*.gdlr-core-page-builder-body [data-skin="Personnel"] a, .gdlr-core-page-builder-body [data-skin="Personnel"] .gdlr-core-skin-link*/
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+        /* Add your Inline CSS class here */
+        /*.gdlr-core-page-builder-body [data-skin="Personnel"] a, .gdlr-core-page-builder-body [data-skin="Personnel"] .gdlr-core-skin-link*/
+        * {
+  box-sizing: border-box;
+}
+
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width:100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 1.5s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+    </style>
+</head>
+<title>{% block title %}
+    {% endblock %}
+</title>
+{% load static %}
+
+ <div id="hd" style="position: static; width: 100%; display: inline-block; ">
+        <div id="mainhead" style="background: #1B374C;">
+            <img id="jk" style="float:left; padding: 10px;" src="/static/img/nitk.png" alt="nitk image(not found)" width="100" />
+            <img id="au" style="float:right;padding-right: 10px;" src="/static/img/nitk2.png" alt="au image(not found)" width="100" />
+            <h1 style="color: #FFF;font-family: Georgia, 'Times New Roman', Times, serif;">&nbsp;&nbsp;&nbsp; NATIONAL INSTITUTE TECHNOLOGY, KARNATAKA<br>
+                <p style="font-size:large;font-family: Georgia, 'Times New Roman', Times, serif;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NH 66, Srinivasnagar Surathkal, Mangalore Karnataka 575025</p>
+            </h1><br clear="all">
+        </div>
+
+
+        <div id="main-outer">
+            <div id="main-wrapper">
+                <div id="main">
+                    <div class="navigation-wrapper">
+                        <div class="container">
+                            <div class="navigation">
+                                <div id="main-menu-container">
+                                    <div id="main-menu" class="nav" >
+                                        <li>
+                                            <a href="{% url 'home' %}">Home</a>
+                                        </li>
+                                        <li class="menuparent">
+                                            <a href="#">Administration</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'Director' %}">Director</a></li>
+                                                <li><a href="{% url 'hod' %}">Heads Of Department</a></li>
+                                                <li><a href="{% url 'org' %}">Organisation Chart</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menuparent">
+                                            <a href="#">Academics</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'AcademicOffice' %}">Academic Office</a></li>
+                                                <li class="menuparent">
+                                                    <a href="#">Programme</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="{% url 'ugProgram' %}">UG Programme</a></li>
+                                                        <li><a href="{% url 'pgProgram' %}">PG Programme</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="{% url 'AcadCal' %}">Academic Calender</a></li>
+                                                <li><a href="{% url 'Depart' %}">Departments</a></li>
+                                                <li><a href="{% url 'Fee' %}">Fee Structure</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menuparent" >
+                                            <a href="#">For Student</a>
+                                            <ul class="sub-menu" >
+                                                <li><a href="{% url 'UgPgTt' %}">UG & PG Time-Table</a></li>
+                                                <li><a href="{% url 'UgPgSyllabus' %}">UG & PG Syallabus</a></li>
+                                                <li ><a href="{% url 'studentRegister' %}">Registration</a></li>
+                                                {% if not stdData %}
+                                                <li><a href="{% url 'StudentLogin' %}">Login</a></li>
+                                                {% endif %}
+                                            </ul>
+                                        </li>
+                                        <li class="menuparent">
+                                            <a href="#">Career</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'Teach' %}">Teaching Positions</a></li>
+                                                <li><a href="{% url 'NonTeach' %}">Non Teaching Positions</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menuparent">
+                                            <a href="#">For Faculty</a>
+                                             <ul class="sub-menu">
+                                                 <li><a href="{% url 'FacultyLogin' %}">Login</a></li>
+
+                                            </ul>
+                                        </li>
+
+
+                                        {% if  stdData %}
+                                         <li><a href="">Welcome, {{stdData.Name}}</a></li>
+                                        <li><a href="{% url 'LogoutS' stdData.rollNo %}">Logout</a></li>
+                                        {% endif %}
+
+                                          {% if  Fdata %}
+                                         <li><a href="">Welcome, {{Fdata.name}}</a></li>
+                                        <li><a href="{% url 'home' %}">Logout</a></li>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>
+
+{% block content %}
+<body >
+</body>
+{% endblock %}
+
+<footer>
+<section id="footer" class="section" style="position: static;">
+            <div id="innerfooter" class="footer">
+                <div class="container">
+                    <div class="row" style="width:100%;">
+                        <div class="col-md-3 text-center fl">© National Institute of Technology Karnataka, Surathkal<br>
+                        </div>
+
+                        <div class="col-md-6 text-center fc">
+                            <!--Email: <a class="darklinks" href="mailto:webadmin@iisc.ac.in">webadmin@iisc.ac.in</a> &nbsp;&nbsp;-->
+                            <a class="darklinks" href="https://www.nitk.ac.in/contact-us">Contact</a>&nbsp;&nbsp; Phone: 0824 247 4000 &nbsp;&nbsp;
+                            <a class="darklinks" href="https://www.nitk.ac.in/contact-us#map_section">Maps &amp; Directions</a> &nbsp;&nbsp;<br>
+                            <a class="darklinks" href="{% url 'Feed' %}">Feedback</a> &nbsp;&nbsp;
+                            <!--a class="darklinks" href="/credits/">Credits</a> &nbsp;&nbsp;-->
+                            <a class="darklinks" target="_blank" href="https://www.nitk.ac.in/contact-us">Email Login</a> &nbsp;&nbsp;
+                            <a class="darklinks" href="{% url 'Feed' %}"><span class="glyphicon glyphicon-lock glyphicon-small"></span>&nbsp;Submit Content</a>&nbsp;&nbsp;
+                        </div>
+                        <div class="col-md-3 text-center fr">
+                            <a href="https://www.facebook.com/NITKarnataka/" target="_blank"><img src="https://iisc.ac.in/wp-content/themes/iisc/images/facebook.png" width="20" height="20" alt="Facebook"></a>
+                            <a href="https://twitter.com/surathkal_nitk?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="https://iisc.ac.in/wp-content/themes/iisc/images/twitter.png" width="20" height="20" alt="Twitter"></a>
+                            <a href="https://www.youtube.com/channel/UCrYljZ7p47MVeMn4hEFZe2w" target="_blank"><img src="https://iisc.ac.in/wp-content/themes/iisc/images/youtube.png" width="20" height="20" alt="YouTube"></a>
+                            <a href="https://www.linkedin.com/school/nitk-surathkal/?originalSubdomain=in" target="_blank"><img src="https://iisc.ac.in/wp-content/themes/iisc/images/linkedin.png" width="20" height="20" alt="YouTube"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+</html>

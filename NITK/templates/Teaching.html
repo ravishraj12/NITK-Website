@@ -1,0 +1,876 @@
+{% extends "base.html" %}
+{% block title %}Application Form{% endblock %}
+{% block content %}
+<style>
+        /* .mySlides {display: none;}
+img {vertical-align: middle;} */
+        /* Slideshow container */
+        
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+        /* Caption text */
+        
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+        
+        .dot {
+            height: 8px;
+            width: 8px;
+            margin: 0;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 1.5s ease;
+        }
+        
+        .active {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 2s;
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+        
+        .left-col {
+            flex: 0 0 auto;
+            width: 30%;
+            height: 100%;
+        }
+        
+        .right-col {
+            flex: 0 0 auto;
+            width: 30%;
+            height: 100%;
+        }
+        
+        .mid {
+            flex: 0 0 auto;
+            width: 40%;
+            height: 100%;
+        }
+        /* If your content is less and footer is not at the bottom of the page uncomment below css class .footer */
+        /* .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        } */
+        /* Add your Inline CSS class here */
+        
+        #innerfooter {
+            width: 100%;
+            background: #1B374C;
+            border-top: 5px solid #EE5030;
+            padding: 10px 0;
+        }
+        
+        #footer {
+            width: 100%;
+            font-size: 13px;
+            color: #ddd;
+            text-align: left;
+            padding: 10px 0;
+            /* border-top: 5px solid #108896; */
+        }
+        
+        a.darklinks {
+            color: #FFF;
+            font-size: 13px;
+            cursor: pointer;
+            margin: 0;
+            text-decoration: none;
+            -moz-transition: all .2s;
+            -o-transition: all .2s;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+        }
+        
+        .content {
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            margin-top: 30px;
+            height: 45%;
+        }
+        
+        .content {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex: 1 0 100%;
+            flex-wrap: wrap;
+            /* margin-top: calc(var(--bs-gutter-y) * -1);
+            margin-right: calc(var(--bs-gutter-x)/ -2);
+            margin-left: calc(var(--bs-gutter-x)/ -2); */
+        }
+        
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 0.25rem;
+            height: 100%;
+        }
+        
+        .btn-primary {
+            color: rgb(0, 0, 0);
+            /* background-color: hsl(342, 98%, 52%);
+            border-color: #fd0d55; */
+            /* position: fixed; */
+        }
+        
+        .btn {
+            background-color: #9ac3ff;
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #050505;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            /* background-color: transparent; */
+            border: 1px solid transparent;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+        
+        a {
+            color: #0d6efd;
+            text-decoration: underline;
+        }
+        
+        .pos {
+            /* top: 85%; */
+            /* left: 30%;
+            right: 30%; */
+            position: absolute;
+            /* padding: 10px; */
+        }
+        
+        .form-row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -5px;
+            margin-left: -5px;
+        }
+        
+        .form-row>.col,
+        .form-row>[class*=col-] {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+        
+        .mb-3,
+        .my-3 {
+            margin-bottom: 1rem!important;
+        }
+        
+        .col-md-4 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+        
+        form {
+            display: block;
+            margin-top: 0em;
+        }
+        
+        .bd-example {
+            padding: 1.5rem;
+            margin-right: 0;
+            margin-left: 0;
+            border-width: 0.2rem;
+        }
+        
+        .bd-example {
+            position: relative;
+            padding: 1rem;
+            margin: 1rem -15px 0;
+            border: solid #f7f7f9;
+            border-width: 0.2rem 0 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        /* .content {
+            margin-right: -15px;
+            margin-left: -15px;
+        } */
+    </style>
+
+<h2 style="text-align: center;color: darkslateblue;"><br>Application for Teaching Position</h2>
+          {% for msg in messages %}
+            <p style="color:darkblue"> {{msg}}</p>
+        {% endfor %}
+
+    <div class="bd-example" style="padding: 5%;">
+        <form class="needs-validation was-validated" novalidate="" method="POST">
+            {% csrf_token %}
+            <div class="col">
+                <label for="Position1">Position For which you are applying</label>
+                <div class="col-sm-10">
+                    <input name="position" type="text" class="form-control" id="Position1" placeholder="Enter the Position" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter Position.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="col">
+                <label for="PersonalInformation"><h4>Personal Information</h4></label>
+            </div>
+            <hr>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <label for="validationCustom01">First name</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required=""> -->
+                    <input name="fname" type="text" class="form-control" id="validationCustom01" placeholder="First name" required="">
+                    <div class="invalid-feedback">
+                        Please Enter First Name.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- <div class="col-md-4 mb-3">
+                    <label for="exampleInputPassword1">Middle Name</label>
+                    <input type="text" class="form-control" id="middleName" placeholder="Middle Name">
+                </div> -->
+                <div class="col-md-6">
+                    <label for="validationCustom02">Last name</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required=""> -->
+                    <input  name="lname" type="text" class="form-control" id="validationCustom02" placeholder="Last name" required="">
+                    <div class="invalid-feedback">
+                        Please Enter Last Name.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="inputEmail1">Email</label>
+                    <div class="col-sm-10">
+                        <input  name="email" type="text" class="form-control" id="inputEmail1" placeholder="Email" required="" value="">
+                        <div class="invalid-feedback">
+                            Please Enter Email.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <label for="inputEmail2">Confirm Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail2" placeholder="Email" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter Email.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <span id="messages" style="color:red"></span>
+            <div class="col">
+                <label for="PhoneNumber1">Phone Number</label>
+                <div class="col-sm-10">
+                    <input  name="phone" type="text" class="form-control" id="PhoneNumber1" placeholder="Phone Number" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter Your Phone Number.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <label for="inlineRadioOptions">Gender</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female" required="" />
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="Others" required="" />
+                    <label class="form-check-label" for="inlineRadio3">Other</label>
+                </div>
+            </div>
+            <div class="col">
+                <label for="Country1">Country</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Country1" placeholder="Country" required="" value="">
+                    <div class="invalid-feedback">
+                        Please Enter Country.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom03">City</label>
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="City" required="">
+                    <div class="invalid-feedback">
+                        Please provide a valid city.
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationCustom04">State</label>
+                    <input type="text" class="form-control" id="validationCustom04" placeholder="State" required="">
+                    <div class="invalid-feedback">
+                        Please provide a valid state.
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationCustom05">Zip</label>
+                    <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required="">
+                    <div class="invalid-feedback">
+                        Please provide a valid zip.
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="col">
+                <label for="PersonalInformation"><h4>Educational Qualification</h4></label>
+            </div>
+            <hr>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <label for="validationCustom01">High School Name</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required=""> -->
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Your School Name" required="">
+                    <div class="invalid-feedback">
+                        Please Enter Your School Name.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02">Years Attended</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required=""> -->
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Enter the No. of Years" required="">
+                    <div class="invalid-feedback">
+                        Please Enter No. of Yrs.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02">Degree/Major</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required=""> -->
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Enter Degree/Major" required="">
+                    <div class="invalid-feedback">
+                        Please Enter Degree/Major
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <label for="validationCustom01">College Name</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required=""> -->
+                    <input  name="college" type="text" class="form-control" id="validationCustom01" placeholder="Enter Your College Name" required="">
+                    <div class="invalid-feedback">
+                        Please Enter Your College Name.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02">Years Attended</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required=""> -->
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Enter the No. of Years" required="">
+                    <div class="invalid-feedback">
+                        Please Enter No. of Yrs.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02">Degree/Major</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required=""> -->
+                    <input  name="degree" type="text" class="form-control" id="validationCustom02" placeholder="Enter Degree/Major" required="">
+                    <div class="invalid-feedback">
+                        Please Enter Degree/Major
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <label for="validationCustom01">Trade or Correspondence School</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required=""> -->
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Your School Name" required="">
+                    <div class="invalid-feedback">
+                        Please Enter Your School Name.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02">Years Attended</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required=""> -->
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Enter the No. of Years" required="">
+                    <div class="invalid-feedback">
+                        Please Enter No. of Yrs.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02">Degree/Major</label>
+                    <!-- <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required=""> -->
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Enter Degree/Major" required="">
+                    <div class="invalid-feedback">
+                        Please Enter Degree/Major
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="col">
+                <label for="PersonalInformation"><h4>Experience</h4></label>
+            </div>
+            <hr>
+
+            <div id="cid_26" class="form-input-wide">
+                <div id="text_26" class="form-html" data-component="text">
+                    <strong>Teaching Experience</strong> Please include dates employed, Employer name, address and phone number, Position, Salary, Wage, Supervisor's name and phone number, and your reason for leaving.
+                </div>
+            </div>
+            <hr>
+
+
+            <div class="col">
+                <label for="PersonalInformation"><h5>Most Recent Position</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea  name="exp" class="form-control" id="textarea2" rows="4" required></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <label for="PersonalInformation"><h5>Most Recent Position</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <label for="PersonalInformation"><h5>Second Most Recent Position</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <label for="PersonalInformation"><h5>Third Most Recent Position</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <label for="PersonalInformation"><h5>Please explain any gaps in employment</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+
+            <hr>
+            <div id="cid_26" class="form-input-wide">
+                <div id="text_26" class="form-html" data-component="text">
+                    <strong>Other Relevant Experience</strong> Please list any other experience you have, including dates, employer name address and phone number, position, salary, supervisor's name and phone number, and reason for leaving.
+                </div>
+            </div>
+            <hr>
+
+            <div class="col">
+                <label for="PersonalInformation"><h5>Experience #1</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <label for="PersonalInformation"><h5>Experience #2</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <label for="PersonalInformation"><h5>Experience #3</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+
+            <hr>
+            <div id="cid_26" class="form-input-wide">
+                <div id="text_26" class="form-html" data-component="text">
+                    In the field below, please respond to each of the following questions: 1. Why do you want to be a teacher for the Oelwein Community Schools? 2. What experience do you have specific to the position you are applying for and how would you use that experience
+                    to be a success in the Oelwein Commuunity Schools? 3. Describe your greatest accomplishments as an educator.
+                </div>
+            </div>
+            <hr>
+            <div class="col">
+                <label for="PersonalInformation"><h5>Narrative Response</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+            <hr>
+            <div id="cid_26" class="form-input-wide">
+                <div id="text_26" class="form-html" data-component="text">
+                    List degrees, honors, commendations, elective or appointive offices held, or other distinctions received.
+                </div>
+            </div>
+            <hr>
+            <div class="col">
+                <label for="PersonalInformation"><h5>HONORS AND DISTINCTIONS</h5></label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+            <hr>
+            <div id="cid_26" class="form-input-wide">
+                <div id="text_26" class="form-html" data-component="text">
+                    BACKGROUND INFORMATION
+                </div>
+            </div>
+            <hr>
+            <div class="col">
+                <label for="inlineRadioOptions">Are you, or have you ever been, listed on a sex offender registry?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio1" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio1" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="inlineRadioOptions">Are you, or have you ever been, listed on a child or dependant adult abuse registry?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio2" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio2" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="inlineRadioOptions">Have you ever been found guilty, accepted a guilty or Alford Plea, or entered a plea of no-contest for any criminal charge?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio3" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio3" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="inlineRadioOptions">Have you ever received a deferred judgment, or in some other way had a guilty plea or conviction removed from your record?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio4" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio4" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="inlineRadioOptions">Have you ever received a deferred judgment, or in some other way had a guilty plea or conviction removed from your record?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio5" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio5" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="inlineRadioOptions">Have you ever been asked to resign from a position, or been given the choice of resigning or being terminated from your position?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio6" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio6" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+            <div class="col">
+                <label for="PersonalInformation">If you answered “yes” to any of the above questions, provide date, incident, specific charge, city/state in which occurred:
+                </label>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea2" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <label for="inlineRadioOptions">Have you ever been asked to resign from a position, or been given the choice of resigning or being terminated from your position?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio7" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio7" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+            <div class="col">
+                <label for="inlineRadioOptions">Have you ever been the subject of an investigation or other formal/informal proceeding that resulted in the termination of your employment or resignation?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio8" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio8" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+            <div class="col">
+                <label for="inlineRadioOptions">Have you ever been the subject of an investigation into wrong doing or other formal/informal proceeding, resulting in disciplinary or criminal action?</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio9" id="inlineRadio1" value="option1" required="" />
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio9" id="inlineRadio2" value="option2" required="" />
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <label for="inlineRadioOptions">By my electronic submission of this form: • I attest that all the information contained in this application is accurate, complete, and true. • I am bound by all elements of the agreement section of the application. • I understand and accept that electronic submission will be considered equivalent to an original hand written signature on a paper copy of the application.</label>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="Enter Your Name" required="">
+                </div>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required="">
+                    <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+            <!--<button class="btn btn-primary pos" type="submit">Submit form</button>-->
+        <input  style="margin-left:45%;" class="btn btn-primary pos" type="submit" value="Submit Form">
+
+        </form>
+    </div>
+
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        function IsValidEmail(email) {
+            var expr = /[A-Za-z][A-Za-z._0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+            return expr.test(email);
+        };
+
+        function ValidateEmails() {
+            var message = ""
+            var inputs = document.getElementsById("inputEmail1");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "text" && inputs[i].className.indexOf("email") != -1) {
+                    var email = inputs[i].value;
+                    if (IsValidEmail(email)) {
+                        message += email + " - Valid Email.\n"
+                    } else {
+                        message += email + " - Invalid Email.\n"
+                    }
+                }
+            }
+            alert(message);
+        }
+
+        function myfun() {
+            var a = document.getElementById("inputEmail1").value;
+            var b = document.getElementById("inputEmail2").value;
+            if (a != b) {
+                document.getElementById("messages").innerHTML = "Emails are not same"
+                return false;
+            }
+        }
+    </script>
+
+    <!-- Add your bootstrap class here or any other required script like jquery, javascript, ajax etc if needed -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+{% endblock %}

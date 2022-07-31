@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}Student Home{% endblock %}
+{% block content %}
+
+{% if isSubj == 0 %}
+
+<div class="container" style="padding-top:20px;">
+  <h2 style="color: darkslateblue;">Register Subjects</h2>
+  <form class="form-inline" method="post" name="RegisterSubjects" action = "{% url 'RegisterSubjects' stdData.rollNo %}">
+                   {% csrf_token %}
+    <div class="form-group" style="width:100%;">
+        <div class="form-group" style="float:left;padding-right:5px;">
+                  {{form.subj1}}
+        </div>&nbsp;&nbsp;&nbsp;
+    <div class="form-group" style="float:left;padding-right:5px;">
+      {{form.subj2}}
+    </div>
+         <div class="form-group" style="float:left;padding-right:5px;">
+      {{form.subj3}}
+    </div>
+         <div class="form-group" style="float:left;padding-right:5px;">
+      {{form.subj4}}
+    </div>
+         <div class="form-group" style="float:left;">
+      {{form.subj5}}
+    </div>
+        <button type="submit" class="btn btn-primary pos">Submit</button>
+    </div>
+
+  </form>
+</div>
+</div>
+
+{% endif %}
+
+        <div id="updates" style="width: 100%; display: inline-block;padding-top:20px;" >
+            <div class="row" style="margin-left:inherit !important;margin-right:inherit !important;">
+
+                <div class="col-sm-3 news_border;" style="margin-top:25px;">
+                    <div class="single_analize__block text-center" style="border: 2px solid rgb(119, 104, 104);height: 300px;">
+                        <h2 style="background: #1B374C; color:#fff;" class="font-22">Placement Updates</h2>
+                        <hr>
+                        <marquee scroll="" attribute_name="attribute_value" direction="up" onmouseover="this.stop();" scrollamount="4" onmouseout="this.start();" style="height: 200px;">
+                            <div class="menub">
+                                <ul>
+                                    {% if news %}
+                                        {% for n in news %}
+                                            <li>{{n.update}} </li>
+                                        {% endfor %}
+                                    {% endif %} </ul>
+                            </div>
+                        </marquee>
+                    </div>
+                </div>
+
+                <div class="col-sm-9">
+                    <div class="col-md-6">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <h2 style="color: darkslateblue;">&nbsp;&nbsp;&nbsp;Your Details</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row" style="margin-left:inherit !important;margin-right:inherit !important; ">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color: rgb(21, 21, 22);">Major Credit</h5>
+                                    <p class="card-text" style="color: rgb(0, 0, 0);">{{stdData.credits}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color: rgb(21, 21, 22);">Major CGPA</h5>
+                                    <p class="card-text" style="color: rgb(0, 0, 0);">{{stdData.cgpa}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color: rgb(21, 21, 22);">Semester</h5>
+                                    <p class="card-text" style="color: rgb(0, 0, 0);">{{stdData.semester}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<br>
+                    <div class="col-md-6" style="margin-top: 20px;">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <h2 style="color: darkslateblue;">&nbsp;&nbsp;&nbsp;Courses Enrolled</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row" style="margin-left:inherit !important;margin-right:inherit !important; ">
+                        {% for s in Subjects%}
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text" style="color: rgb(0, 0, 0);">{{s}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<br><br><br>
+
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+{% endblock %}

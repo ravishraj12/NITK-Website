@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Organizational Chart{% endblock %}
+{% block content %}
+<div class="kingster-page-wrapper" id="kingster-page-wrapper" >
+
+        <div class="gdlr-core-page-builder-body" >
+
+                <div class="gdlr-core-pbf-sidebar-wrapper " style="margin: 0px 0px 30px 0px;">
+    <div class="gdlr-core-pbf-sidebar-container clearfix gdlr-core-js gdlr-core-container">
+                                <p><img style="width: 100%;" src="/static/img/organizational_chart.jpg"></p>
+
+            <script>
+    $(document).ready(function () {
+        object_tags = $(".gdlr-core-page-builder-body object")
+        if (object_tags.length == 0) {
+            anchor_tags = $(".gdlr-core-page-builder-body a")
+            for (i = 0; i < anchor_tags.length; i++) {
+                anchor_tag = anchor_tags[i]
+                url = anchor_tag.getAttribute("href");
+                if (url && url.endsWith(".pdf")) {
+                    pdf_object = '<hr><object data="' + url + '" type="application/pdf">' +
+                        '    <iframe src="' + url + '"></iframe>' +
+                        '</object>'
+                    $(pdf_object).insertAfter(anchor_tag);
+                }
+            }
+        }
+    });
+</script>
+
+    </div>
+</div>
+        </div>
+    </div>
+
+{% endblock %}
